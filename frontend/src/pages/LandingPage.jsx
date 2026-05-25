@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import { Play, ArrowRight, Sparkles } from "lucide-react";
+import { Play, ArrowRight, Sparkles, Box, Target, FileBraces, Share } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function LandingPage() {
@@ -54,6 +54,79 @@ export default function LandingPage() {
                         </div>
                         <div className="absolute -z-10 inset-0 bg-linear-to-r from-[#FFD700] to-[#FFA500] blur-3xl opacity-20 scale-90"></div>
                     </motion.div>
+                </div>
+            </section>
+
+            {/* feature section */}
+            <section id="feature" className="max-w-7xl mx-auto px-6 py-20">
+                <motion.div
+                    initial={{ opacity:0, y:20 }}
+                    whileInView={{ opacity:1, y:0 }}
+                    viewport={{ once:true }}
+                    transition={{ duration:0.6 }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Everything You Need To Perfect Your Build</h2>
+                    <p className="text-xl text-gray-400">Powerful tools designed for seroius Genshin players</p>
+                </motion.div>
+                <div className="grid md:grid-cols-3 gap-8">
+                    {[
+                        {
+                            icon: <Box className="w-12 h-12" />,
+                            title: "Smart Artifact Inventory",
+                            desc: "Easily track and manage all your artifacts in one clean interface.",
+                            delay: 0,
+                        },
+
+                        {
+                            icon: <Target className="w-12 h-12" />,
+                            title: "Real-Time Damage Calculator",
+                            desc: "See exactly how much damage your burst will do before even opening the game.",
+                            delay: 0.2,
+                        },
+
+                        {
+                            icon: <Sparkles className="w-12 h-12" />,
+                            title: "Algoritmic Optimizer",
+                            desc: "Let our engine instanly find the mathematically perfect artifact combination from your inventory.",
+                            delay: 0.4,
+                        },
+
+                        {
+                            icon: <FileBraces className="w-12 h-12" />,
+                            title: "Auto-Import (Painless Data Entry)",
+                            desc: "Don't waste time typing. Instantly import hundreds of artifacts using the GOOD (Genshin Open Object Description) format from third-party scanners.",
+                            delay: 0.6,
+                        },
+
+                        {
+                            icon: <Share className="w-12 h-12" />,
+                            title: "Export & Flex Your Build",
+                            desc: "Generate premium, beautifully designed build cards with a single click. Ready to be shared on Discord, Reddit, or your favorite community.",
+                            delay: 0.8,
+                        },
+                    ].map((feature, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity:0, y:20 }}
+                            whileInView={{ opacity:1, y:0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration:0.6, delay: feature.delay }}
+                            className="relative group"
+                        >
+                            <div className="absolute inset-0 bg-linear-to-br from-[#FFD700]/20 to-transparent rounded-2xl 
+                            blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div className="relative bg-linear-to-br from-[#1a1f4a] to-[#0f1433] p-8 rounded-2xl border 
+                            border-white/10 hover:border-[#FFD700]/50 transition-all h-full">
+                                <div className="w-16 h-16 bg-linear-to-br from-[#FFD700] to-[#FFA500] rounded-xl flex 
+                                items-center justify-center text-[#0a0e27] mb-6 group-hover:scale-110 transition-transform">
+                                    {feature.icon}
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                                <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </section>
         </div>
