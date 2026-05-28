@@ -16,7 +16,7 @@ export default function Header() {
 
                         {/* Navigasi */}
                         <nav className='hidden md:flex items-center gap-5'>
-                            <a href="" className='text-gray-300 hover:text-white transition-colors'>Features</a>
+                            <a href="#feature" className='text-gray-300 hover:text-white transition-colors'>Features</a>
                             <a href="" className='text-gray-300 hover:text-white transition-colors'>How It Works</a>
                             <a href="" className='text-gray-300 hover:text-white transition-colors'>FAQ</a>
                         </nav>

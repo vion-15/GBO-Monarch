@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import { Play, ArrowRight, Sparkles, Box, Target, FileBraces, Share } from "lucide-react";
 import { motion } from "motion/react";
+import Footer from "../components/Footer";
 
 export default function LandingPage() {
     return (
@@ -129,6 +130,32 @@ export default function LandingPage() {
                     ))}
                 </div>
             </section>
+
+            {/* CTA */}
+            <section className="max-w-7xl mx-auto px-6 py-20 mb-20">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="relative overflow-hidden rounded-3xl"
+                >
+                    <div className="absolute inset-0 bg-linear-to-r from-[#FFD700] to-[#FFA500] opacity-10"></div>
+                    <div className="relative border border-[#FFD700]/30 bg-linear-to-br from-[#1a1f4a] 
+                    to-[#0f1433] p-12 md:p-16 text-center">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to be Strongest Player Ever?</h2>
+                        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                            Join thousands players who've alredy optimized their builds
+                        </p>
+                        <button className="px-12 py-5 bg-linear-to-r from-[#FFD700] to-[#FFA500] 
+                        text-[#0a0e27] font-bold text-lg rounded-lg hover:shadow-2xl hover:shadow-[#FFD700]/50 transition-all 
+                        hover:scale-105">Create Your Account</button>
+                    </div>
+                </motion.div>
+            </section>
+
+            {/* Footer */}
+            <Footer />
         </div>
     )
 }
