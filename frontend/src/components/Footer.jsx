@@ -6,7 +6,7 @@ import { SiGmail } from "react-icons/si";
 export default function Footer() {
     return (
         <footer className="bg-[#060914] border-t border-white/5">
-            <div className="max-w7xl mx-auto px-6 py-16">
+            <div className="max-w-7xl mx-auto px-6 py-16">
                 <div className="grid md:grid-cols-12 gap-12 mb-12">
                     <div className="md:col-span-5">
                         <div className="flex items-center gap-2 mb-4">
